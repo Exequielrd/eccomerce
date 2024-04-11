@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export default function Navbar() {
   return (
-    <header className="container sticky z-50 flex items-center justify-between w-full md:backdrop-blur text-light">
+    <header className="sticky z-50 flex items-center justify-between w-full px-10 shadow-sm md:backdrop-blur text-light shadow-light/10">
       <Link href="/" className="text-2xl font-light uppercase">
         <Image src="/logo.png" alt="" width={100} height={100} />
       </Link>
@@ -18,7 +18,7 @@ export default function Navbar() {
           {links.map(({ path, name }) => (
             <li
               key={path}
-              className="duration-100 hover:border-b border-light/50"
+              className="duration-100 hover:border-b border-black/50"
             >
               <Link href={path} className="block">
                 {name}
@@ -26,7 +26,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <Button>Get started</Button>
+            <Button variant="">Get started</Button>
           </li>
         </ul>
       </nav>
