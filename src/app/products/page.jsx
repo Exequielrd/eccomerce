@@ -1,7 +1,6 @@
 import { ProductCard } from "@/components/cards/ProductCard"
 
 export default function page({ params }) {
-  const { type } = params
   const products = [
     {
       image: "/logo.png",

@@ -18,8 +18,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        dark: "#000000",
+        dark: "#030712",
+        subtitle: "#4b5563",
         light: "#FFFFFF",
+        medium: "#F9FAFB",
+        border: "#e5e7eb",
       },
       keyframes: {
         "accordion-down": {

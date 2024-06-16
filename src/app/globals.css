@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply bg-dark text-light;
+  @apply bg-light text-dark;
 }
 
 @layer {
   .container {
-    @apply w-full max-w-screen-xl px-10 mx-auto xl:p-0;
+    @apply w-full px-10 mx-auto max-w-screen-2xl xl:p-0;
   }
 }
