@@ -64,7 +64,8 @@ export default function page() {
           <hr />
           <div>
             <p className="mb-3 text-2xl font-bold">${product.price}</p>
-            <Button>Comprar</Button>
+            <small>Sin stock</small>
+            <Button disabled>Comprar</Button>
           </div>
         </div>
       </div>
