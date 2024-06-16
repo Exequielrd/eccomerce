@@ -8,6 +8,6 @@ body {
 
 @layer {
   .container {
-    @apply w-full px-10 mx-auto max-w-screen-2xl xl:p-0;
+    @apply w-full mx-auto max-w-screen-2xl;
   }
 }

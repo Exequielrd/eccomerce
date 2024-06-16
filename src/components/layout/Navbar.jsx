@@ -4,13 +4,10 @@ import MobileMenu from "./MobileMenu"
 
 export default function Navbar() {
   return (
-    <header className="sticky z-50 flex items-center justify-between w-full h-16 px-10 text-xs shadow-sm md:backdrop-blur text-subtitle">
-      <div className="container flex items-center justify-between">
-        <div className="w-[40%]">
+    <header className="sticky z-50 w-full h-16 text-xs shadow-sm text-subtitle">
+      <div className="container flex items-center justify-between h-full">
+        <div className="lg:w-[40%]">
           <button className="hover:text-dark">Menu</button>
-        </div>
-        <div className="md:hidden">
-          <MobileMenu />
         </div>
         <Link href="/">
           <h2 className="text-lg font-bold hover:text-dark">Central Store</h2>
@@ -29,6 +26,7 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
+        <Link href="/cart">Carrito</Link>
       </div>
     </header>
   )

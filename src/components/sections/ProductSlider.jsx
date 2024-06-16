@@ -13,7 +13,7 @@ export default function ProductSlider({ title, url = "#", items }) {
           </Link>
         </div>
       )}
-      <div className="grid grid-cols-3 h-[550px]">
+      <div className="flex h-[550px]">
         {items.map((item) => (
           <ProductCard item={items[0]} key={item.id} />
         ))}

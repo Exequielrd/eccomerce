@@ -3,8 +3,8 @@ import Link from "next/link"
 
 export function ProductCard({ item }) {
   return (
-    <article className="w-full h-full">
-      <Link href={`/product/${item.id}`}>
+    <article className="max-w-[400px] w-[80vw] h-full">
+      <Link href={`/products/${item.id}`}>
         <div className="relative h-[90%] w-full overflow-hidden border rounded-xl group bg-medium border-border">
           <Image
             src={item.image}

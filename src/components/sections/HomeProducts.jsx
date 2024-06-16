@@ -12,13 +12,9 @@ export default function HomeProducts() {
   ]
   return (
     <div className="container flex flex-col gap-12 py-24">
-      <ProductSlider title="Mas Vendidos" linkUrl="/products" items={items} />
-      <ProductSlider
-        title="Últimos productos"
-        linkUrl="/products"
-        items={items}
-      />
-      <ProductSlider title="Oferta" linkUrl="/products" items={items} />
+      <ProductSlider title="Mas Vendidos" url="/products" items={items} />
+      <ProductSlider title="Últimos productos" url="/products" items={items} />
+      <ProductSlider title="Oferta" url="/products" items={items} />
     </div>
   )
 }
