@@ -6,5 +6,5 @@ export default function Subtotal() {
     return acc + el.price * el.qty
   }, 0)
 
-  return <span>${total?.toFixed(2)}</span>
+  return <span>${total?.toFixed(2) || "0.00"}</span>
 }

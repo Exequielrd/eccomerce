@@ -9,7 +9,7 @@ export default function VariantSelector({ selected, value, title }) {
     const url = new URL(window.location)
 
     url.searchParams.set(title, value)
-    router.push(url.toString())
+    router.push(url.toString(), { scroll: false })
   }
 
   return (

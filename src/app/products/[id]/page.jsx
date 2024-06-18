@@ -11,7 +11,6 @@ export default async function page({ params, searchParams }) {
   const { data, error } = await supabase.from("products").select().eq("id", id)
   const product = data[0]
   const noItems = product.stock < 1
-  console.log(product)
 
   return (
     <section className="container py-12">
@@ -31,7 +30,7 @@ export default async function page({ params, searchParams }) {
           </div>
         </div>
         <div className="flex flex-col justify-end w-full gap-5 lg:w-1/4">
-          <div className="flex flex-col w-full gap-5">
+          <div className="flex flex-col w-full gap-5" id="variants">
             {product.variants.map((variant, index) => (
               <div key={index} className="flex flex-col gap-3 capitalize">
                 <p className="text-sm">Select {variant.title}</p>

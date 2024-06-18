@@ -24,7 +24,7 @@ export default async function page() {
         </p>
         <p className="flex items-center justify-between mt-3 text-sm text-subtitle">
           <span>Envío</span>
-          <span>$0</span>
+          <span>$0.00</span>
         </p>
         <hr className="my-5" />
         <p className="flex items-center justify-between mt-3 text-sm text-subtitle">
