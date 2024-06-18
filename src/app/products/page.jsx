@@ -1,36 +1,18 @@
 import { ProductCard } from "@/components/cards/ProductCard"
+import { supabaseServer } from "@/supabase/supabase"
 
-export default function page({ params }) {
-  const products = [
-    {
-      image: "/logo.png",
-      secondary_img: "/logo.png",
-      name: "Shoes",
-      description: "Shoes asdasd",
-      price: 100,
-      id: 1,
-    },
-  ]
+export default async function page() {
+  const supabase = await supabaseServer()
+  const { data: products, error } = await supabase.from("products").select()
 
   return (
     <section className="container py-24 min-h-[70vh]">
-      <div className="flex items-end gap-2">
-        <h2 className="text-4xl font-bold uppercase md:text-5xl">Title</h2>
-        <span>[1200]</span>
-      </div>
-      <p className="mt-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, dolor?
-      </p>
-      <div className="grid grid-cols-2 gap-3 mt-10 md:grid-cols-3 lg:grid-cols-4">
-        {products.length ? (
-          products.map((product) => (
-            <ProductCard item={product} key={product.id} />
-          ))
-        ) : (
-          <>
-            <p className="text-xl">No hay productos</p>
-          </>
-        )}
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {products?.map((product) => (
+          <div className="h-[450px]" key={product.id}>
+            <ProductCard item={product} />
+          </div>
+        ))}
       </div>
     </section>
   )

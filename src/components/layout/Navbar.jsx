@@ -26,7 +26,6 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <Link href="/cart">Carrito</Link>
       </div>
     </header>
   )

@@ -8,7 +8,7 @@ export default function ProductSlider({ title, url = "#", items }) {
       {title && (
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-lg font-normal">{title}</h2>
-          <Link href={url} className="text-sm">
+          <Link href={url} className="text-sm text-blue-500 hover:underline">
             Ver todos
           </Link>
         </div>
