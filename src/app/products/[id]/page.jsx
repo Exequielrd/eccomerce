@@ -31,7 +31,7 @@ export default async function page({ params, searchParams }) {
         </div>
         <div className="flex flex-col justify-end w-full gap-5 lg:w-1/4">
           <div className="flex flex-col w-full gap-5" id="variants">
-            {product.variants.map((variant, index) => (
+            {product.variants?.map((variant, index) => (
               <div key={index} className="flex flex-col gap-3 capitalize">
                 <p className="text-sm">Select {variant.title}</p>
                 <div className="flex gap-3">
@@ -50,17 +50,24 @@ export default async function page({ params, searchParams }) {
           <hr />
           <div>
             <p className="mb-3 text-2xl font-bold">
-              ${product.prices[selectedValues.sort().join("")] || product.price}
+              $
+              {product.prices
+                ? product.prices[selectedValues.sort().join("")]
+                : product.price}
             </p>
             {noItems && (
               <small className="mb-2 text-xs text-subtitle">Sin stock</small>
             )}
             <BuyButton
               product={product}
-              price={product.prices[selectedValues.sort().join("")]}
+              price={
+                product.prices
+                  ? product.prices[selectedValues.sort().join("")]
+                  : product.price
+              }
               variants={searchParams}
               disabled={
-                product.variants.length > selectedValues.length || noItems
+                product.variants?.length > selectedValues.length || noItems
               }
             />
           </div>
