@@ -2,7 +2,7 @@ import { ProductCard } from "../cards/ProductCard"
 import Link from "next/link"
 import React from "react"
 
-export default function ProductSlider({ title, url = "/products", items }) {
+export default function ProductSlider({ title, url = "/products", products }) {
   return (
     <section className="h-fit">
       {title && (
@@ -14,8 +14,8 @@ export default function ProductSlider({ title, url = "/products", items }) {
         </div>
       )}
       <div className="flex gap-5 h-[550px]">
-        {items.map((item) => (
-          <ProductCard item={items[0]} key={item.id} />
+        {products.map((product) => (
+          <ProductCard item={product} key={product.id} />
         ))}
       </div>
     </section>
