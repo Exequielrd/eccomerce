@@ -8,13 +8,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function DeliveryForm() {
+  const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
   const deliveryPrices = {
     normal: "2000",
     flex: "3500",
+  }
+
+  function handleOpen(value) {
+    setTimeout(() => setIsOpen(value), 200)
   }
 
   function setDelivery(value) {
@@ -35,7 +40,11 @@ export default function DeliveryForm() {
   return (
     <form className="grid grid-cols-2 gap-5" onSubmit={nextStep}>
       <div className="col-span-2">
-        <Select defaultValue="normal" onValueChange={setDelivery}>
+        <Select
+          defaultValue="normal"
+          onValueChange={setDelivery}
+          onOpenChange={handleOpen}
+        >
           <SelectTrigger>
             <SelectValue placeholder="Envío" />
           </SelectTrigger>
@@ -45,7 +54,7 @@ export default function DeliveryForm() {
           </SelectContent>
         </Select>
       </div>
-      <Button>Continuar</Button>
+      <Button disabled={isOpen}>Continuar</Button>
     </form>
   )
 }

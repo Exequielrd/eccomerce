@@ -48,7 +48,7 @@ export default function Items() {
           <TableRow key={index}>
             <TableCell className="font-medium">
               <p>{product.name}</p>
-              <p className="my-2 text-subtitle">
+              <p className="my-2 text-subtitle whitespace-nowrap">
                 <span>Variantes: </span>
                 {Object.values(product.variants).map((variant, index) => (
                   <span

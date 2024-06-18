@@ -6,7 +6,7 @@ import Summary from "@/components/checkout/Summary"
 export default function page({ searchParams }) {
   const { step } = searchParams
   return (
-    <section className="container min-h-[50vh] my-24 flex gap-10">
+    <section className="container min-h-[50vh] my-24 flex flex-col-reverse lg:flex-row gap-10">
       <div className="flex-grow">
         <h2 className="mb-10 text-3xl font-semibold">Dirección de envío</h2>
         {!step && <AddressForm />}

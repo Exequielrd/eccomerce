@@ -23,7 +23,10 @@ export default function AddressForm() {
   }
 
   return (
-    <form className="grid grid-cols-2 gap-5" onSubmit={saveDeliveryInfo}>
+    <form
+      className="grid grid-cols-1 gap-5 md:grid-cols-2"
+      onSubmit={saveDeliveryInfo}
+    >
       <Input
         type="text"
         placeholder="Nombre"
