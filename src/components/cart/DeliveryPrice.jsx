@@ -1,7 +1,11 @@
 "use client"
 
 export default function DeliveryPrice() {
-  const delivery = localStorage.getItem("delivery-price")
+  let delivery = null
+
+  if (typeof window !== "undefined") {
+    delivery = localStorage.getItem("delivery-price")
+  }
 
   return <span>${delivery || "0.00"}</span>
 }
