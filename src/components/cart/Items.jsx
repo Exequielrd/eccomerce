@@ -48,17 +48,19 @@ export default function Items() {
           <TableRow key={index}>
             <TableCell className="font-medium">
               <p>{product.name}</p>
-              <p className="my-2 text-subtitle whitespace-nowrap">
-                <span>Variantes: </span>
-                {Object.values(product.variants).map((variant, index) => (
-                  <span
-                    key={index}
-                    className="p-1 mx-1 border rounded-lg bg-medium border-border"
-                  >
-                    {variant}
-                  </span>
-                ))}
-              </p>
+              {product.variants.length && (
+                <p className="my-2 text-subtitle whitespace-nowrap">
+                  <span>Variantes: </span>
+                  {Object.values(product.variants).map((variant, index) => (
+                    <span
+                      key={index}
+                      className="p-1 mx-1 border rounded-lg bg-medium border-border"
+                    >
+                      {variant}
+                    </span>
+                  ))}
+                </p>
+              )}
             </TableCell>
             <TableCell>
               <div className="flex items-center gap-2">
@@ -85,7 +87,7 @@ export default function Items() {
                 </Select>
               </div>
             </TableCell>
-            <TableCell>${product.price}</TableCell>
+            <TableCell>${product.price.toFixed(2)}</TableCell>
             <TableCell className="text-right">
               ${(product.qty * product.price).toFixed(2)}
             </TableCell>

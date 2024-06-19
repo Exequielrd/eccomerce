@@ -1,14 +1,9 @@
 import { Button } from "@/components/ui/button"
-import { supabaseServer } from "@/supabase/supabase"
 import Items from "@/components/cart/Items"
 import Subtotal from "@/components/cart/Subtotal"
 import Link from "next/link"
 
 export default async function page() {
-  const supabase = await supabaseServer()
-  const { data, error } = await supabase.from("products").select()
-  console.log(data)
-
   return (
     <section className="container min-h-[50vh] py-12 md:py-24 flex flex-col lg:flex-row gap-10">
       <div className="flex-grow">
