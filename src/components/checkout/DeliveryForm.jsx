@@ -29,7 +29,7 @@ export default function DeliveryForm() {
 
   function nextStep(e) {
     e.preventDefault()
-    router.push("?step=payment")
+    router.push("?step=payment", { scroll: false })
   }
 
   useEffect(() => {

@@ -19,6 +19,11 @@ export async function POST(request) {
   const res = await preference.create({
     body: {
       items: products,
+      back_urls: {
+        success: "https://central-store.vercel.app/thanks",
+        failure: "https://central-store.vercel.app/failure",
+        pending: "https://central-store.vercel.app/pending",
+      },
     },
   })
   const preferenceId = res.id

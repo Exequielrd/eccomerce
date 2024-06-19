@@ -19,7 +19,7 @@ export default function AddressForm() {
   function saveDeliveryInfo(e) {
     e.preventDefault()
     localStorage.setItem("delivery-info", JSON.stringify(formData))
-    router.push("?step=delivery")
+    router.push("?step=delivery", { scroll: false })
   }
 
   return (

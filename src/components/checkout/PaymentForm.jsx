@@ -26,10 +26,7 @@ export default function PaymentForm() {
 
   return (
     <div>
-      <Wallet
-        initialization={{ preferenceId }}
-        customization={{ texts: { valueProp: "smart_option" } }}
-      />
+      <Wallet initialization={{ preferenceId }} />
     </div>
   )
 }

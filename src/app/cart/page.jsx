@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default async function page() {
   return (
-    <section className="container min-h-[50vh] py-12 md:py-24 flex flex-col lg:flex-row gap-10">
+    <section className="container min-h-[70vh] py-12 md:py-24 flex flex-col lg:flex-row gap-10">
       <div className="flex-grow">
         <h2 className="mb-10 text-3xl font-medium">Carrito</h2>
         <Items />
