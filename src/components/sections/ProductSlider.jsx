@@ -13,7 +13,7 @@ export default function ProductSlider({ title, url = "/products", products }) {
           </Link>
         </div>
       )}
-      <div className="flex gap-5 h-[400px] lg:h-[500px] overflow-scroll">
+      <div className="flex gap-5 h-[400px] lg:h-[500px] overflow-x-auto">
         {products?.map((product) => (
           <ProductCard item={product} key={product.id} fixedWidth />
         ))}
