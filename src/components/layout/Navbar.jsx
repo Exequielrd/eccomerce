@@ -6,9 +6,9 @@ import Image from "next/image"
 export default function Navbar() {
   return (
     <header className="sticky z-50 w-full text-xs shadow-sm text-subtitle">
-      <div className="container flex items-center justify-between h-full py-2">
+      <div className="container flex items-center justify-between h-full py-3">
         <Link href="/">
-          <Image src="/cs-logo.png" alt="logo" width={125} height={100} />
+          <Image src="/cs-logo.png" alt="logo" width={125} height={80} />
         </Link>
         <div className="md:hidden text-dark">
           <MobileMenu />
