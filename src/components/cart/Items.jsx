@@ -19,7 +19,11 @@ import DeleteIcon from "../icons/Delete"
 
 export default function Items() {
   const router = useRouter()
-  let products = JSON.parse(localStorage.getItem("products")) || []
+  let products = []
+
+  if (typeof window !== "undefined") {
+    products = JSON.parse(localStorage.getItem("products"))
+  }
 
   function handleChange(value, index) {
     products[index].qty = value
