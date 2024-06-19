@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/select"
 import { useRouter } from "next/navigation"
 import DeleteIcon from "../icons/Delete"
+import Image from "next/image"
 
 export default function Items() {
   const router = useRouter()
@@ -41,7 +42,7 @@ export default function Items() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Producto</TableHead>
+          <TableHead className="min-w-[250px]">Producto</TableHead>
           <TableHead>Cantidad</TableHead>
           <TableHead>Precio</TableHead>
           <TableHead className="text-right">Total</TableHead>
@@ -51,20 +52,28 @@ export default function Items() {
         {products.map((product, index) => (
           <TableRow key={index}>
             <TableCell className="font-medium">
-              <p>{product.name}</p>
-              {product.variants.length && (
-                <p className="my-2 text-subtitle whitespace-nowrap">
-                  <span>Variantes: </span>
-                  {Object.values(product.variants).map((variant, index) => (
-                    <span
-                      key={index}
-                      className="p-1 mx-1 border rounded-lg bg-medium border-border"
-                    >
-                      {variant}
-                    </span>
-                  ))}
-                </p>
-              )}
+              <div className="flex items-center">
+                <Image
+                  width={100}
+                  height={100}
+                  src={product.image}
+                  alt={product.name}
+                />
+                <p>{product.name}</p>
+                {product.variants.length && (
+                  <p className="my-2 text-subtitle whitespace-nowrap">
+                    <span>Variantes: </span>
+                    {Object.values(product.variants).map((variant, index) => (
+                      <span
+                        key={index}
+                        className="p-1 mx-1 border rounded-lg bg-medium border-border"
+                      >
+                        {variant}
+                      </span>
+                    ))}
+                  </p>
+                )}
+              </div>
             </TableCell>
             <TableCell>
               <div className="flex items-center gap-2">
