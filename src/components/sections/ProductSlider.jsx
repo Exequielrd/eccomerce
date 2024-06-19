@@ -4,7 +4,7 @@ import React from "react"
 
 export default function ProductSlider({ title, url = "/products", products }) {
   return (
-    <section className="h-fit">
+    <section className="overflow-scroll h-fit">
       {title && (
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-lg font-normal">{title}</h2>
@@ -13,7 +13,7 @@ export default function ProductSlider({ title, url = "/products", products }) {
           </Link>
         </div>
       )}
-      <div className="flex gap-5 h-[550px]">
+      <div className="flex gap-5 h-[400px] lg:h-[500px]">
         {products?.map((product) => (
           <ProductCard item={product} key={product.id} />
         ))}
