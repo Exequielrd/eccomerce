@@ -15,7 +15,7 @@ export default function ProductSlider({ title, url = "/products", products }) {
       )}
       <div className="flex gap-5 h-[400px] lg:h-[500px]">
         {products?.map((product) => (
-          <ProductCard item={product} key={product.id} />
+          <ProductCard item={product} key={product.id} fixedWidth />
         ))}
       </div>
     </section>

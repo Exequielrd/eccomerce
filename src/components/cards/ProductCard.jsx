@@ -1,9 +1,15 @@
+import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
 
-export function ProductCard({ item }) {
+export function ProductCard({ item, fixedWidth }) {
   return (
-    <article className="max-w-[400px] min-w-[250px] w-[60vw] h-full group">
+    <article
+      className={clsx(
+        "h-full group",
+        fixedWidth ? "max-w-[400px] w-[60vw]" : "w-full"
+      )}
+    >
       <Link href={`/products/${item.id}`}>
         <div className="relative h-[90%] w-full overflow-hidden border rounded-xl group bg-medium border-border group-hover:border-subtitle/50">
           <Image
