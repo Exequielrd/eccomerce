@@ -1,15 +1,16 @@
 import { links } from "@/lib/navigation-links"
 import Link from "next/link"
 import MobileMenu from "./MobileMenu"
+import Image from "next/image"
 
 export default function Navbar() {
   return (
-    <header className="sticky z-50 w-full h-16 text-xs shadow-sm text-subtitle">
-      <div className="container flex items-center justify-between h-full">
+    <header className="sticky z-50 w-full text-xs shadow-sm text-subtitle">
+      <div className="container flex items-center justify-between h-full py-2">
         <Link href="/">
-          <h2 className="text-lg font-bold hover:text-dark">Central Store</h2>
+          <Image src="/cs-logo.png" alt="logo" width={125} height={100} />
         </Link>
-        <div className="md:hidden">
+        <div className="md:hidden text-dark">
           <MobileMenu />
         </div>
         <nav className="items-center hidden gap-5 md:flex w-[40%] justify-end">

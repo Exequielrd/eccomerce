@@ -16,7 +16,7 @@ export default function MobileMenu() {
   }
   return (
     <>
-      <div className="size-10" onClick={() => setIsOpen(true)}>
+      <div className="size-9" onClick={() => setIsOpen(true)}>
         <MenuIcon />
       </div>
       {isOpen && (

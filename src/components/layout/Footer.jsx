@@ -1,4 +1,5 @@
 import { links } from "@/lib/navigation-links"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="container pt-24">
         <div className="flex flex-col justify-between md:flex-row">
           <Link href="/">
-            <h2 className="text-lg font-bold hover:text-dark">Central Store</h2>
+            <Image src="/cs-logo.png" alt="logo" width={150} height={100} />
           </Link>
           <nav className="flex gap-10 text-xs text-subtitle">
             {/* <ul className="flex flex-col gap-3 mt-10 md:mt-0 md:items-end">
