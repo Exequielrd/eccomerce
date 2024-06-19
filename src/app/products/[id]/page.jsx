@@ -3,12 +3,15 @@ import VariantSelector from "@/components/product/VariantSelector"
 import ProductSlider from "@/components/sections/ProductSlider"
 import Image from "next/image"
 import BuyButton from "@/components/product/BuyButton"
+import StockSubscribe from "@/components/product/StockSubscribe"
 
 export default async function page({ params, searchParams }) {
   const { id } = params
   const selectedValues = Object.values(searchParams)
   const supabase = await supabaseServer()
   const { data, error } = await supabase.from("products").select().eq("id", id)
+  const { data: products } = await supabase.from("products").select()
+
   const product = data[0]
   const noItems = product.stock < 1
 
@@ -51,13 +54,11 @@ export default async function page({ params, searchParams }) {
           <div>
             <p className="mb-3 text-2xl font-bold">
               $
-              {product.prices
+              {product.prices && selectedValues.length
                 ? product.prices[selectedValues.sort().join("")]
                 : product.price}
             </p>
-            {noItems && (
-              <small className="mb-2 text-xs text-subtitle">Sin stock</small>
-            )}
+            {noItems && <StockSubscribe product={product} />}
             <BuyButton
               product={product}
               price={
@@ -77,7 +78,7 @@ export default async function page({ params, searchParams }) {
         <h2 className="mb-5 text-sm text-subtitle">Productos relacionados</h2>
         <p className="text-3xl">Estos productos podrían interesarte.</p>
       </div>
-      {/* <ProductSlider linkUrl="/products" items={products} /> */}
+      <ProductSlider products={products} />
     </section>
   )
 }
