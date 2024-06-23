@@ -18,7 +18,7 @@ export default function Navbar() {
             {links.map(({ path, name }) => (
               <li
                 key={path}
-                className="duration-100 hover:border-b border-dark/50 hover:text-dark"
+                className="duration-100 border-b border-transparent hover:border-dark/50 hover:text-dark"
               >
                 <Link href={path} className="block">
                   {name}

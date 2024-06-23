@@ -20,12 +20,16 @@ export default async function page({ params, searchParams }) {
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-center w-full lg:h-[80vh] mb-24">
         <div className="lg:w-1/4">
           <h2 className="mb-3 text-3xl font-semibold">{product.name}</h2>
-          <p>{product.description}</p>
+          <div dangerouslySetInnerHTML={{ __html: product.description }} />
         </div>
         <div className="flex-grow w-full h-full aspect-square lg:aspect-auto lg:px-10">
           <div className="relative h-full overflow-hidden border rounded-xl bg-medium border-border">
             <Image
-              src={product.image}
+              src={
+                selectedValues.length
+                  ? product.images[selectedValues.sort().join("")]
+                  : product.image
+              }
               alt={product.name}
               fill
               className="object-cover"
@@ -38,7 +42,7 @@ export default async function page({ params, searchParams }) {
           <div className="flex flex-col w-full gap-5" id="variants">
             {product.variants?.map((variant, index) => (
               <div key={index} className="flex flex-col gap-3 capitalize">
-                <p className="text-sm">Select {variant.title}</p>
+                <p className="text-sm">{variant.title}</p>
                 <div className="flex gap-3">
                   {variant.values.map((value) => (
                     <VariantSelector
