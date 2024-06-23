@@ -17,6 +17,7 @@ export function ProductCard({ item, fixedWidth }) {
             alt={item.name}
             fill
             className="object-cover"
+            sizes="30vw"
           />
         </div>
         <div className="flex justify-between gap-5 pt-5 text-sm text-subtitle h-[10%]">

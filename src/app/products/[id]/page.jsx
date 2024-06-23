@@ -29,6 +29,8 @@ export default async function page({ params, searchParams }) {
               alt={product.name}
               fill
               className="object-cover"
+              sizes="70vw"
+              priority={false}
             />
           </div>
         </div>
@@ -50,7 +52,7 @@ export default async function page({ params, searchParams }) {
               </div>
             ))}
           </div>
-          <hr />
+          {product?.variants?.length && <hr />}
           <div>
             <p className="mb-3 text-2xl font-bold">
               $
